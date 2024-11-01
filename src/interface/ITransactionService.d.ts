@@ -1,4 +1,4 @@
-export interface ITransactionService {
+export default interface ITransactionService {
   depositToAccount(
     accountId: string,
     amount: number

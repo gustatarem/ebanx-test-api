@@ -1,3 +1,3 @@
-export interface IAccountService {
+export default interface IAccountService {
   getBalance(accountId: string): number;
 }
