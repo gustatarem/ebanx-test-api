@@ -11,6 +11,10 @@ export default class AccountService implements IAccountService {
   getBalance(accountId: string): number {
     const account = this.accountRepository.findOneById(accountId);
 
+    if (!account) {
+      throw new Error("Account not found.");
+    }
+
     return account.balance;
   }
 }
