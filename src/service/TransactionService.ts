@@ -1,5 +1,5 @@
 import IAccountRepository from "../interface/IAccountRepository";
-import ITransactionService from "../interface/ITransactionservice";
+import ITransactionService from "../interface/ITransactionService";
 
 export default class TransactionService implements ITransactionService {
   private accountRepository: IAccountRepository;

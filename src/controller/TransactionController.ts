@@ -1,5 +1,5 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import ITransactionService from "../interface/ITransactionservice";
+import ITransactionService from "../interface/ITransactionService";
 
 export default class TransactionController {
   private transactionService: ITransactionService;
