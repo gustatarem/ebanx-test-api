@@ -17,7 +17,7 @@ describe("TransactionService", () => {
   });
 
   describe("depositToAccount", () => {
-    test("should deposit into an existing account", () => {
+    it("should deposit into an existing account", () => {
       const account: IAccount = { id: "100", balance: 10 };
       accountRepository.findOneById.mockReturnValue(account);
 
@@ -31,7 +31,7 @@ describe("TransactionService", () => {
       });
     });
 
-    test("should create a new account and deposit the amount into it", () => {
+    it("should create a new account and deposit the amount into it", () => {
       accountRepository.findOneById
         .mockReturnValueOnce(undefined)
         .mockReturnValueOnce({ id: "101", balance: 0 });
@@ -47,7 +47,7 @@ describe("TransactionService", () => {
       });
     });
 
-    test("should throw an error if account is not found after creation", () => {
+    it("should throw an error if account is not found after creation", () => {
       accountRepository.findOneById.mockReturnValue(undefined);
 
       expect(() => transactionService.depositToAccount("102", 30)).toThrow(
@@ -59,7 +59,7 @@ describe("TransactionService", () => {
   });
 
   describe("withdrawFromAccount", () => {
-    test("should withdraw from an existing account", () => {
+    it("should withdraw from an existing account", () => {
       const account: IAccount = { id: "100", balance: 20 };
       accountRepository.findOneById.mockReturnValue(account);
 
@@ -73,7 +73,7 @@ describe("TransactionService", () => {
       });
     });
 
-    test("should throw an error if account is not found", () => {
+    it("should throw an error if account is not found", () => {
       accountRepository.findOneById.mockReturnValue(undefined);
 
       expect(() => transactionService.withdrawFromAccount("101", 10)).toThrow(
@@ -82,7 +82,7 @@ describe("TransactionService", () => {
       expect(accountRepository.findOneById).toHaveBeenCalledWith("101");
     });
 
-    test("should throw an error if balance is insufficient", () => {
+    it("should throw an error if balance is insufficient", () => {
       const account: IAccount = { id: "100", balance: 10 };
       accountRepository.findOneById.mockReturnValue(account);
 
