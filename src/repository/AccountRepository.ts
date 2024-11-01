@@ -16,4 +16,9 @@ export default class AccountRepository {
   createAccount(accountId: string) {
     accounts.push({ id: accountId, balance: 0 });
   }
+
+  updateAccount(account: IAccount) {
+    const index = accounts.findIndex((acc) => acc.id === account.id);
+    accounts[index] = account;
+  }
 }
