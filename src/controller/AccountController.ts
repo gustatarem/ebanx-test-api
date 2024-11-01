@@ -1,10 +1,10 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import AccountService from "../service/AccountService";
+import IAccountService from "../interface/IAccountService";
 
 export default class AccountController {
-  private accountService: AccountService;
+  private accountService: IAccountService;
 
-  constructor(accountService: AccountService) {
+  constructor(accountService: IAccountService) {
     this.accountService = accountService;
   }
 

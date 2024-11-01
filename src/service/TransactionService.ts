@@ -1,10 +1,10 @@
+import IAccountRepository from "../interface/IAccountRepository";
 import ITransactionService from "../interface/ITransactionservice";
-import AccountRepository from "../repository/AccountRepository";
 
 export default class TransactionService implements ITransactionService {
-  private accountRepository: AccountRepository;
+  private accountRepository: IAccountRepository;
 
-  constructor(accountRepository: AccountRepository) {
+  constructor(accountRepository: IAccountRepository) {
     this.accountRepository = accountRepository;
   }
 

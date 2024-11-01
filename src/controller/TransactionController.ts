@@ -1,10 +1,10 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import TransactionService from "../service/TransactionService";
+import ITransactionService from "../interface/ITransactionservice";
 
 export default class TransactionController {
-  private transactionService: TransactionService;
+  private transactionService: ITransactionService;
 
-  constructor(transactionService: TransactionService) {
+  constructor(transactionService: ITransactionService) {
     this.transactionService = transactionService;
   }
 
