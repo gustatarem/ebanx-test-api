@@ -1,7 +1,11 @@
 import { FastifyInstance } from "fastify";
+import AccountRepository from "../repository/AccountRepository";
+
+const accountRepository = new AccountRepository();
 
 export async function resetRoute(fastify: FastifyInstance) {
-  fastify.post("/reset", (req, res) => {
-    return res.status(200).send("OK");
+  fastify.post("/reset", (request, reply) => {
+    accountRepository.reset();
+    return reply.status(200).send("OK");
   });
 }
