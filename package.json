@@ -1,0 +1,21 @@
+{
+  "name": "ebanx-test-api",
+  "version": "1.0.0",
+  "description": "EBANX Take Home Test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.8.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "fastify": "^5.1.0"
+  }
+}
