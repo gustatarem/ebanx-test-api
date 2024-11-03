@@ -46,12 +46,12 @@ This project implements a simple API as a response for the EBANX take-home assig
 
 ## Endpoints
 
-### 1. **GET /balance?accountId=1**
+### 1. **GET /balance**
 
 - **Description**: Returns the current balance.
 - **Example**:
   ```http
-  GET /balance
+  GET /balance?accountId=1
   ```
 - **Response**:
   ```json
