@@ -41,10 +41,12 @@ describe("TransactionController", () => {
   });
 
   it("should withdraw from an existing account", async () => {
-    request.body = { type: "withdraw", origin: "100", amount: 5 };
+    const account = { id: "100", balance: 10 };
     transactionService.withdrawFromAccount.mockReturnValue({
       origin: { id: "100", balance: 5 },
     });
+
+    request.body = { type: "withdraw", origin: "100", amount: 5 };
 
     await transactionController.handleEvent(
       request as FastifyRequest,
@@ -62,6 +64,8 @@ describe("TransactionController", () => {
   });
 
   it("should transfer from an account to another", async () => {
+    const originAccount = { id: "100", balance: 50 };
+
     request.body = {
       type: "transfer",
       origin: "100",
