@@ -44,19 +44,9 @@ This project implements a simple API as a response for the EBANX take-home assig
 
    The server will run on `http://localhost:3000`.
 
-2. **Expose API to the Internet**
-
-   Use [ngrok](https://ngrok.com/) or a similar service to make the local server accessible online for testing:
-
-   ```bash
-   ngrok http 3000
-   ```
-
-   Note the generated URL, as you’ll use it to test the API remotely.
-
 ## Endpoints
 
-### 1. **GET /balance**
+### 1. **GET /balance?accountId=1**
 
 - **Description**: Returns the current balance.
 - **Example**:
