@@ -21,7 +21,7 @@ describe("AccountController", () => {
   });
 
   it("should return status code 404 if the account does not exist", async () => {
-    request.query = { accountId: "999" };
+    request.query = { account_id: "999" };
     accountService.getBalance.mockImplementation(() => {
       throw new Error("Account not found.");
     });
@@ -37,7 +37,7 @@ describe("AccountController", () => {
   });
 
   it("should return status code 200 and the balance for an existing account", async () => {
-    request.query = { accountId: "100" };
+    request.query = { account_id: "100" };
     accountService.getBalance.mockReturnValue(20);
 
     await accountController.getBalance(

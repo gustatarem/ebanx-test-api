@@ -10,9 +10,9 @@ export default class AccountController {
 
   getBalance = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-      const { accountId } = request.query as { accountId: string };
+      const { account_id } = request.query as { account_id: string };
 
-      const balance = this.accountService.getBalance(accountId);
+      const balance = this.accountService.getBalance(account_id);
 
       if (balance === 0) {
         return reply.status(404).send(0);
