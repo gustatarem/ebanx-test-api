@@ -40,7 +40,7 @@ export default class TransactionService implements ITransactionService {
 
     if (account.balance < amount) {
       throw new Error(
-        "You don't have enough balance to complete this trasnsaction."
+        "You don't have enough balance to complete this transaction."
       );
     }
     account.balance -= amount;
